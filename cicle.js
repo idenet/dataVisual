@@ -57,33 +57,74 @@ drawAxis({
   ctx: ctx,
 })
 
-// 绘制矩形
+// 绘制圆环
 // ctx.beginPath()
-// ctx.lineWidth = 5
+// ctx.lineWidth = 2
 // ctx.strokeStyle = 'orange'
-// ctx.fillStyle = 'hotpink'
-// ctx.rect(100, 100, 300, 200)
-// // 先填充在描边
-// ctx.fill()
+// ctx.arc(400, 300, 200, 0, Math.PI / 4, true)
 // ctx.stroke()
 // ctx.closePath()
 
-// // 绘制矩形
-// ctx.beginPath()
-// ctx.lineWidth = 4
-// ctx.strokeStyle = 'seagreen'
-// ctx.strokeRect(100, 310, 300, 200)
-// ctx.closePath()
+// // 绘制圆形
 
 // ctx.beginPath()
 // ctx.fillStyle = 'skyblue'
-// ctx.fillRect(410, 310, 300, 200)
+// ctx.moveTo(400, 300)
+// ctx.arc(400, 300, 100, 0, -Math.PI / 2, true)
+// ctx.fill()
 // ctx.closePath()
 
 ctx.beginPath()
-for (let i = 1; i < Math.floor((wd * 1.5) / step); i++) {
-  const height = Math.random() * 300 + 50
-  ctx.fillStyle = `#${parseInt(Math.random() * 0xffffff).toString(16)}`
-  ctx.fillRect(i * step, ht * 1.5 - bottomPad - height, 40, height)
-}
+ctx.shadowOffsetX = 0
+ctx.shadowOffsetY = 0
+ctx.shadowBlur = 4
+ctx.shodowColor = '#333'
+ctx.fillStyle = `#5c1918`
+ctx.moveTo(400, 300)
+ctx.arc(400, 300, 100, -Math.PI / 2, -Math.PI / 4)
+ctx.fill()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.shadowOffsetX = 0
+ctx.shadowOffsetY = 0
+ctx.shadowBlur = 4
+ctx.shodowColor = '#5c1918'
+ctx.fillStyle = `#a32d29`
+ctx.moveTo(400, 300)
+ctx.arc(400, 300, 110, -Math.PI / 4, Math.PI / 4)
+ctx.fill()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.shadowOffsetX = 0
+ctx.shadowOffsetY = 0
+ctx.shadowBlur = 4
+ctx.shodowColor = '#a32d29'
+ctx.fillStyle = `#b9332e`
+ctx.moveTo(400, 300)
+ctx.arc(400, 300, 120, Math.PI / 4, (Math.PI * 5) / 8)
+ctx.fill()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.shadowOffsetX = 0
+ctx.shadowOffsetY = 0
+ctx.shadowBlur = 4
+ctx.shodowColor = '#b9332e'
+ctx.fillStyle = `#842320`
+ctx.moveTo(400, 300)
+ctx.arc(400, 300, 130, (Math.PI * 5) / 8, Math.PI)
+ctx.fill()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.shadowOffsetX = 0
+ctx.shadowOffsetY = 0
+ctx.shadowBlur = 4
+ctx.shodowColor = '#842320'
+ctx.fillStyle = `#d76620`
+ctx.moveTo(400, 300)
+ctx.arc(400, 300, 140, Math.PI, (Math.PI * 3) / 2)
+ctx.fill()
 ctx.closePath()
